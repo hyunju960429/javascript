@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Scroll Down</h2>
+        <p>Scroll down to see the sticky effect.</p>
+    </header>
+    <nav id="navbar">
+        <a href="javascript:void(0)" class="active">Home</a>
+        <a href="javascript:void(0)">News</a>
+        <a href="javascript:void(0)">Contact</a>
+    </nav>
+    <div class="content">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est, culpa.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores doloribus quos dignissimos, perferendis, commodi nobis temporibus aliquid deleniti sit tempore error ut, illo corporis voluptatibus! Iste natus, vitae consectetur voluptates magni deserunt sit qui itaque quas maiores temporibus! Inventore laborum nihil maiores rem quae esse debitis ut consequuntur necessitatibus laboriosam!</p>
+    </div>
+
+
+    <script>
+        window.addEventListener('scroll',function(){
+            myFunction();
+        })
+        //scroll이 발생하면 실행하는 function 안에 단지 myFunction();와 같이 함수를 호출하는 내용 뿐이면 아래와 같이 단축 가능하다.
+        // window.addEventListener('scroll',myFunction)
+        
+
+
+        // window.onscroll=function(){
+        //     myFunction();
+        // }
+
+        // window.onscroll = myFunction;
+        
+
+        let navbar = document.getElementById('navbar');
+        //offset은 Document를 기준으로 하는 좌표를 구한다.
+        //position은 부모를 기준으로 좌표를 구한다.
+        let sticky = navbar.offsetTop;  //navbar의 머리끝이 문서내의 꼭대기와의 거리값이 얼마이냐?>>offsetTop
+        console.log(sticky)
+
+        function myFunction(){
+            // console.log(window.scrollY)
+            console.log(window.pageYOffset)
+            if(window.pageYOffset>=sticky){
+                navbar.classList.add('sticky');
+            }else{
+                navbar.classList.remove('sticky');
+            }
+        }
+
+    </script>
+</body>
+</html>

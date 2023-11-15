@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 - 전역변수 vs 지역변수
+        //변수는 변수의 스코프(scope)에 따라 전역변수와 지역변수로 나뉜다.
+
+        //[1] 전역변수 (Global Variable)
+        //함수 외부에서 선언된 변수로, 프로그램 전체 코드(함수)에서 자유롭게 접근 할 수 있다.
+
+        //[2] 지역변수 (Local Variable)
+        //함수 내부에서 선언된 변수로, 프로그램 전체 코드(함수)에서 자유롭게 접근 할 수 없다.
+        //함수 호출시 함수 내부에서만 사용되고, 함수가 종료시 소멸된다.
+        //핵심은 --> 함수 외부에서 액세스(참조)가 안된다.
+
+        //let name = "전국구";
+        
+        //밖에서는 함수안을 전혀 볼 수 없다.
+        function testFunc(){
+            //함수 안에서는 밖을 볼수는 있다.
+            let name = "지역구";
+
+            //지역변수는 함수 안을 우선순위로 참조하고 함수 안에 변수가 없다면 함수 밖을 탐색한다.
+            console.log(name)
+        }
+        testFunc();
+        console.log(name)
+
+
+        //
+        var a = 123;
+        function testFunc2(){
+            // var a = 456;
+            a = 456;
+        }
+        testFunc2();
+        console.log(a)
+
+
+        //변수의 scope
+        //var --> 함수
+        //const, let --> {}
+    </script>
+</body>
+</html>

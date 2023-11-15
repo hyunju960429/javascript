@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    /* font-size: 5px; */
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.main {
+    height: 100vh;
+    background-color: #222;
+    padding-top: 10vh;
+    box-sizing: border-box;
+}
+.main .cover {
+    display: flex;  /* 글자가 밑으로 떨어지는것 방지용 */
+    font-size: 5rem; /* 1rem=(미설정시)16px*/
+    color: #222;
+    background-color: #fff;
+    padding: 2rem 0;
+    width: 100%;
+    margin-bottom: 20rem;
+}
+.main .cover:nth-child(1) {}
+.main .cover:nth-child(2) {
+    justify-content: flex-end;
+}
+
+.main .cover .first-parallel {}
+.main .cover .second-parallel {}

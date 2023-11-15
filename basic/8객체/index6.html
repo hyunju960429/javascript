@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체(Object) -- 객체내 함수 만들기
+        
+        //[1] : 객체의 자료형은 다양한 타입을 가질 수 있다.
+        //따라서, 객체내에 함수를 만들어 사용할수 있다. --> 이때!!객체내에 있는 함수--> 메서드(Method)
+
+        let person = {
+            name: "홍길동",
+            age: 20,
+            credits: {
+                english:90,
+                math:70,
+                korea:50,
+            },
+            showMessage:function(){
+                //this는 객체자체를 의미
+                console.log(`제 이름은 ${this.name}입니다. 나이는 ${this.age}살 입니다.`)
+            }
+        }
+
+        person.showMessage();
+        
+        let man = person;
+        man.showMessage();
+        
+        person = null;
+        // person.showMessage();  //에러
+
+        man.showMessage();
+        
+    </script>
+</body>
+</html>

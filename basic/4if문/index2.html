@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //else if --> 복수처리
+
+        /* if(조건문1){
+            조건문1이 참일때 실행문
+        }else if(조건문2){
+            조건문1은 거짓이고, 조건문2가 참일때 실행
+        }else{
+            조건문1 거짓, 조건문2 거짓일대 실행문
+        } */
+
+        // let 날씨 = true;
+
+        // if(날씨){
+        //     console.log("등산을 간다")
+        // }else{
+        //     console.log("집에서 잔다")
+        // }
+
+        // let 나이 = 18;
+
+        // if(나이>=18){
+        //     console.log("성인 입니다.")
+        // }else{
+        //     console.log("청소년 입니다.")
+        // }
+
+        // let 성적 = 67;
+
+        // if(성적>=90){
+        //     console.log("우수학생 입니다.")
+        // }else if(성적>=80){
+        //     console.log("준우수학생 입니다.")
+        // }else if(성적>=70){
+        //     console.log("잘하고 있습니다.")
+        // }else{
+        //     console.log("노력을 요합니다.")
+        // }
+
+
+
+        // let age=prompt('나이를 입력하세요','');
+        // let 입장료 = '';
+
+        // if(age<13 || age>=65){    //13세 미만이거나 65세 이하이면
+        //     입장료='2000원 입니다.'
+        // }else if(age>=13 && age<20){ //13세이상, 20세 미만이면 (두 조건 모두 만족해야함)
+        //     입장료='3000원 입니다.'
+        // }else{                        //21세이상~64세이하
+        //     입장료='4000원 입니다.'
+        // }
+
+        // console.log(입장료);
+
+
+
+        //이중 if문
+        /* if(조건문A){
+            if(조건문B){
+                조건문A를 만족하고, 조건문B도 만족할때의 실행문
+            }else{
+                조건문A를 만족하고, 조건문B를 만족하지 않을때의 실행문
+            }
+        }else{
+            조건문A를 만족하지 않을때의 실행문
+        }
+ */
+
+        // let html = 90;
+        // let css = 30;
+        // let javascript = 90;
+
+        // let 평균 = (html+css+javascript)/3;
+        // let 합격여부;
+
+        // if(평균>=60){
+        //     if(html<40){
+        //         합격여부=`html 40점 미만 불합격입니다.`;
+        //     }else if(css<40){
+        //         합격여부=`css 40점 미만 불합격입니다.`;
+        //         console.log(합격여부);
+        //     }else if(javascript<40){
+        //         합격여부=`javascript 40점 미만 불합격입니다.`;
+        //     }else{
+        //         합격여부=`축하합니다!! 합격입니다~`;
+        //     }
+        // }else{
+        //     합격여부=`평균 ${평균} 점 불합격입니다.`;
+        //     console.log(합격여부)
+        // }
+
+        // let HTML = Number(prompt('HTML점수를 입력하세요',''));
+        // let CSS = Number(prompt('CSS점수를 입력하세요',''));
+        // let JAVASCRIPT = Number(prompt('JAVASCRIPT점수를 입력하세요',''));
+
+        // let avg = (HTML+CSS+JAVASCRIPT)/3;
+
+        // console.log(avg)
+
+    
+        // let pass;
+
+        // if(avg>=60){
+        //     if(HTML<40){
+        //         pass=`html 40점 미만 불합격입니다.`;
+        //     }else if(CSS<40){
+        //         pass=`css 40점 미만 불합격입니다.`;
+        //         console.log(pass);
+        //     }else if(JAVASCRIPT<40){
+        //         pass=`javascript 40점 미만 불합격입니다.`;
+        //     }else{
+        //         pass=`축하합니다!! 합격입니다~`;
+        //     }
+        // }else{
+        //     pass=`평균 ${avg} 점 불합격입니다.`;
+        //     console.log(pass)
+        // }
+
+
+
+        let 국어 = 60,
+            수학 = 97,
+            영어 = 30;
+        let 과목평균=(국어 + 수학 + 영어)/3;
+        console.log(과목평균); //62.333333333333336
+
+        let 반올림 = Math.round(과목평균); //62
+        console.log(반올림)
+
+        let 올림 = Math.ceil(과목평균); //63
+        console.log(올림)
+
+        let 내림 = Math.floor(과목평균) //62
+        console.log(내림)
+
+        //소수점 반올림
+        let 소수점 = 과목평균.toFixed(2)  //62.33   //toFixed(n) 소수점 n자리까지 표기
+        console.log(소수점)
+            
+    </script>
+</body>
+</html>

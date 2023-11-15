@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //자바스크립트 자료형에서 false로 반환되는 값
+        
+        //[1] :null
+        //의도적으로 값이 없다고 하는 명시적 표현
+        //null은 타입체크를 하면 object(객체)로 나온다
+        //논리연산으로는 false값을 가진다.
+        let isNullCheck = null;
+        
+        // if(조건문){
+        //     조건문이 참일때(true) 실행되는 실행문
+        // } else{
+        //     조건문이 거짓일때(false) 실행되는 실행문
+        // }
+        
+        if(isNullCheck){ //null은 논리연산으로는 false값을 가진다.
+            console.log("긍정")
+        } else{
+            console.log("부정")
+        }
+
+        //[2] :값이 없다라는 의미의 빈 값 --> false
+        let value;
+
+        if(value){
+            console.log('값이없음')
+        }else{
+            console.log('값이있음')  //값이있음 표기
+        }
+        
+        //   !값 --> 부정을 뜻함
+        if(!value){
+            console.log('값이없음')
+        }else{
+            console.log('값이있음')   //값이없음으로 표기
+        }
+
+        // NaN -->faslse로 반환
+        console.log("안녕"/2);   //NaN --> Not a Number
+
+        function add(a,b){
+            return a+b;
+        }
+        console.log(add(1,2));   //3
+        console.log(add());    //NaN
+
+        //
+        let someValue = 0;
+
+        if(someValue){
+            console.log('true입니다');
+        }else{
+            console.log('false입니다');
+        }
+
+        // 💚자바스크립트에서 자료형에서 false가 반환되는것 --> 💙null, "", undefined, 0, NaN💙
+
+        console.log(100/0); //infinity
+        console.log(typeof 100/0);  //NaN
+        console.log(typeof NaN);   //number
+
+        //숫자형의 특수한 값들
+        //NaN, Infinity(무한대)와 같은 특수한 숫자 값들도 있다.
+
+    </script>
+</body>
+</html>

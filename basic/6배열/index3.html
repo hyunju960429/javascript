@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열(array) --
+        let arr = ["홍길동",100,3.14,true,
+            {id:'test',age:20},
+            function(a){
+                return a*2
+            }
+        ];
+
+        //[1] 배열 맨 앞에 원소(요소)를 제거 -->shift
+        arr.shift();
+        console.log(arr);  //[100, 3.14, true, {…}, ƒ]
+
+        //[2] 배열 맨 앞에 원소(요소)를 추가 -->unshift
+        arr.unshift("안녕하슈");
+        console.log(arr);
+
+        //[3] 여러개 입력
+        arr.unshift("순자","말자","경자");
+        console.log(arr);
+        arr.shift();
+        console.log(arr);
+    </script>
+</body>
+</html>

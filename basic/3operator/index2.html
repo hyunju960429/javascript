@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //비교 연산자
+        //불리언형 --> 참(true) 또는 거짓(false) -->긍정 또는 부정
+
+        console.log(100<200); //true
+        console.log(100 == 200); //false   같은가?로 물었으므로 값은 false
+        console.log(100 != 200); //true    다른가?로 물었으므로 값은 true
+
+        console.log(100<=200); //true      작거나 같은가?로 물었으므로 값은 true
+        console.log(100>=200); //false     크거나 같은가?로 물었으므로 둘 다 해당 안되어서 값은 false
+
+        //AND, OR 연산자
+        //AND연산자 &&   ---> 양쪽 모두 true일때만 true
+        console.log(true && true); //true
+        console.log(false && true); //false
+        console.log(true && false); //false
+        console.log(false && false); //false
+
+        //OR연산자 ||    ---> 한쪽이라도 true이면 true
+        console.log(true || true); //true
+        console.log(false || true); //true
+        console.log(true || false); //true
+        console.log(false || false); //false
+
+        //&& : 앞의 것이 false이면 뒤의 것을 평가(실행)할 필요없음
+        //|| : 앞의 것이 true이면 뒤의 것을 평가(실행)할 필요없음
+
+        //[??] - null병합연산자
+        //null값 또는 undefined만 대체
+
+        let x;
+        x ??
+        console.log(x, 'x에 값이 없습니다');  //undefined 'x에 값이 없습니다'
+
+        let xx = 0;  //0-->false
+        xx ??
+        console.log(xx, 'xx에 값이 없습니다');  //실행불가
+
+        let xxx = null;
+        xxx ??
+        console.log(xxx, 'xxx에 값이 없습니다');  //null 'xxx에 값이 없습니다'
+
+        let baby1 = '홍길동';
+        let baby2;
+        let nameTag1=baby1 ?? '1번아기';
+        let nameTag2=baby2 ?? '2번아기';
+
+        console.log(nameTag1); //홍길동
+        console.log(nameTag2); //2번아기
+        
+        //단항 산술
+        //후치연산자 x++
+        //전치연산자 ++x
+
+        //후치연산자 x--
+        //전치연산자 --x
+
+
+        //단항 부정
+        //!x --> x의 부정 x가 true이면 false, x가 false이면 true
+
+        let yarn = 1;
+        yarn++;   //1인 상태에서 나갈때 1 더해짐
+        console.log(yarn);  //2
+        
+        ++yarn; //들어오자마자 1 더해짐
+        console.log(yarn);  //3
+
+        //정수와 실수 비교
+        //javascript에서는 정수와 실수를 각각의 자료형으로 구분하지 않는다.
+        console.log(10 == 10.0); //true
+        console.log(typeof 10); //number
+        console.log(typeof 10.0); //number
+
+        //정수 구분하기 --> Number.isInteger()
+        console.log(Number.isInteger(1)) //true
+        console.log(Number.isInteger(0.1)) //false
+        console.log(Number.isInteger(10.1)) //false
+        console.log(Number.isInteger(10.0)) //true   //🤓주의하기 소수점자리가 0일때는 정수로 취급한다.
+
+        //문자열 --> 정수로 바꾸기
+        let someValue="10";
+        console.log(Number.isInteger(someValue));    //Q.someValue가 정수인가?  //false
+
+        console.log(`문자열을 정수로 바꾸기 = ${Number.parseInt(someValue)}`); //문자열을 정수로 바꾸기 = 10
+        
+        console.log(Number.isInteger(Number.parseInt(someValue)));  //true
+
+        //문자열을 실수로 바꾸기
+        let someValue2 = "3.14";
+        console.log(Number.parseInt(someValue2));  //3
+        console.log(Number.parseFloat(someValue2)); //3.14
+
+        let aa = "100 200 300";
+        console.log(Number.parseInt(aa)); //100    //공백이 있으면 맨 앞의 숫자만 정수로 변환된다.-->parseInt나 parseFloat 모두 마찬가지
+
+        let bb = "3.14만명";
+        console.log(Number.parseFloat(bb)); //3.14
+        console.log(Number.parseInt(bb));  //3
+
+        console.log(10 == "10"); //true
+        console.log(10 === "10");  //false   //자료형까지 비교
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 - 디폴트 매개변수 값
+        //매개변수(인자)값을 받는 함수에서 매개변수 값이 없는 경우 --> 디폴트값을 지정 할 수 있다.
+
+        //[1] or 연산자를 사용
+        
+
+        function 함수(id){
+            let user_id = id || 'Guest'; //피연산자 중에서 둘중 하나라도 참이면 참이된다.
+
+            let greeting = `반갑습니다. ${user_id} 회원님`;
+            console.log(greeting)
+        }
+        함수();
+        함수('abc');
+
+        //[2] 매개변수 default값을 사용//??????????
+
+        function 함수2(id="guest"){
+            let greeting = `반갑습니다. ${user_id} 회원님`;
+            console.log(greeting)
+        }
+        함수2('Hong');
+    </script>
+</body>
+</html>

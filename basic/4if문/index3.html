@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //삼항연산자 --> 피연산자가 세개이기 때문에 삼항연산자
+        //다른말로 하면 조건부 연산자
+
+        let 키 = 154;
+        let 탑승여부;
+        if(키>=160){
+            탑승여부 ="당신은 청룡열차를 탈 수 있는 키입니다."
+        }else{
+            탑승여부 ="당신은 청룡열차를 탈 수 없는 키입니다."
+        }
+        console.log(탑승여부) //당신은 청룡열차를 탈 수 없는 키입니다.
+
+        
+        //let result = 조건문?a:b;
+        //a는 조건문이 참일때의 실행문
+        //b는 조건문이 거짓일때의 실행문
+
+        let result = (키>=160)?console.log("당신은 청룡열차를 탈 수 있는 키입니다.")
+        :console.log("당신은 청룡열차를 탈 수 없는 키입니다."); //당신은 청룡열차를 탈 수 없는 키입니다.
+        
+
+        let 점수 = 66;
+
+        let 피자 = (점수>=80)?consol.log("피자먹어라")
+        :console.log("쌍욕"); 
+
+        let 용돈 = 31000;
+
+        let 가방1 =50000;
+        let 가방2 =40000;
+        let 가방3 =30000;
+        
+        let 가방 = (용돈>=50000)?console.log(가방1+"가방구입")
+        :(용돈>=40000)?console.log(가방2+"가방구입"):console.log(가방3+"가방구입");
+        
+    </script>
+</body>
+</html>

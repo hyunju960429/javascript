@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 -- 기본연습
+
+        //※호이스팅이란 코드를 실행하기 전에 함수_이름있는함수,변수,클래스 등을 해당 범위의 맨 위로 이동시키는 과정
+        함수1('코카콜라');  //호이스팅
+
+        function 함수1(name){
+            let msg = `${name} 회원님 등교하셨습니다.`;
+            console.log(msg)
+        }
+        함수1('임승기'); //임승기 회원님 등교하셨습니다.
+        함수1('임현주'); //임현주 회원님 등교하셨습니다. 
+        함수1('김주호'); //김주호 회원님 등교하셨습니다.
+
+        //변수 호이스팅
+        //var 호이스팅이 된다.(let, const 도 호이스팅이 되나 deadzone 사각지대에 숨어있다.)
+        // var green;
+        // console.log(green)
+        // console.log(one)  //undefined
+        // console.log(two)
+        // console.log(three)
+        // var one = 10;
+        // let two = 20;
+        // const three = 30;
+
+
+
+
+        //[2]
+        function 함수2(name){
+            if(name){
+                let msg = `${name} 회원님 등교하셨습니다.`;
+                console.log(msg)
+            }else{
+                let msg = '이름을 다시 입력하세요'
+                console.log(msg)
+            }
+
+        }
+        함수2();
+        함수2("세종대왕");
+
+        function 함수3(name){
+            let msg = '퇴근하세요~';
+            msg += `${name}회원님!`;
+            console.log(msg)  //퇴근하세요~세종대왕회원님!
+        }
+        함수3('세종대왕');
+    </script>
+</body>
+</html>

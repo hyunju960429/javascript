@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            float: left;
+            background-color: inherit; /* 부모의 것을 상속받음 */
+            border: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tabcontent {
+            border: 1px solid #ccc;
+            padding: 6px 12px;
+            border-top: 0;
+        }
+        .tabcontent .topright {
+            float: right;
+            cursor: pointer;
+            font-size: 28px;
+        }
+        .tabcontent .topright:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabs</h2>
+    <p>오른쪽에 x 버튼을 클릭하면 현재 tab이 닫힙니다.</p>
+
+    <div class="tab">
+        <button class="tablinks" id="defaultOpen" onclick="openCity(event,'London')">London</button>
+        <button class="tablinks" onclick="openCity(event,'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event,'Tokyo')">Tokyo</button>
+    </div> <!-- //tab -->
+
+    <div id="London" class="tabcontent">
+        <span class="topright">&times;</span>
+        <h3>London</h3>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </div> <!-- //London -->
+    <div id="Paris" class="tabcontent">
+        <span class="topright">&times;</span>
+        <h3>Paris</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    </div> <!-- //Paris -->
+    <div id="Tokyo" class="tabcontent">
+        <span class="topright">&times;</span>
+        <h3>Tokyo</h3>
+        <p>Lorem ipsum dolor sit.</p>
+    </div> <!-- //Tokyo -->
+
+    <script src="main.js"></script>
+</body>
+</html>

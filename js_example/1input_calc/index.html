@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>덧셈 계산기</h2>
+    <form action="#">
+        첫번째 정수: <input type="text" id="x"/> <br/>
+        두번째 정수: <input type="text" id="y"/> <br/>
+        합계: <input type="text" id="sum"/> <br/>
+        <input type="button" value="계산" onclick="더하기()">
+        <p id="pp"></p>
+    </form>
+
+    <script>
+        function 더하기(){  //이름이 있는 함수
+            let x값 = document.getElementById('x').value;  //input의 값 출력
+            let y값 = document.getElementById('y').value;
+                //y값은 id가 y인 사용자의 값(value)를 가져온다(문자로 가져옴)
+            let 합계 = Number(x값) + Number(y값); //강제로 숫자로 바꿈 Number()
+            console.log(합계)
+            
+
+            document.getElementById('sum').value=합계;
+
+
+            // document.getElementById('pp').innerHTML=합계;/
+            document.getElementById('pp').innerHTML="<span>"+합계+"</span>";
+
+
+            //Number(x값)--정수, 실수
+            //parseInt(x값)--정수
+            
+
+            // type 종류
+            // number(숫자)
+            // string(문자)
+        }
+    </script>
+</body>
+</html>

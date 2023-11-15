@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["첫번째","두번째","세번째","네번째","다섯번째"];
+
+        document.write("for문---------------<br/>")
+        for(let i=0;i<arr.length;i++){
+            document.write(arr[i]+'<br/>')
+        }
+
+
+        document.write("forEach문---------------<br/>")
+        // 배열이름.forEach(각각의 할일);
+        // 배열이름.forEach(function(){각각의 실행문});
+        // 배열이름.forEach(function(변수를 사용하여 각각의 요소를 순서대로 받음){각각의 실행문});
+
+
+
+        arr.forEach(function(item){
+            document.write(item,"<br/>")
+        });
+
+        document.write("for..in---------------<br/>")
+
+        // for(let 변수를 사용하여 각각의 요소를 순서대로 받음 in 배열이름){
+        //     각각의 실행문
+        // }
+
+        
+        for(let item in arr){
+            document.write(item,"<br/>")  //0,1,2,3,4
+            document.write(arr[item],"<br/>")  //첫번째, 두번째, 세번째, 네번째, 다섯번째
+        }
+
+
+        document.write("for..of-----------<br/>")
+        // for(let 변수를 사용하여 각각의 요소를 순서대로 받음 of 배열이름){
+        //     각각의 실행문
+        // }
+
+        for(let item of arr){
+            document.write(item + "<br/>")   //첫번째, 두번째, 세번째, 네번째, 다섯번째
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체(Object) - 값의 복사와 참조
+
+        //[1] 원시타입 vs 객체타입(참조타입)
+        //원시타입 --> 오직 하나의 값만 할당 --> 변수끼리 할당(대입) --> 값의 복사 --> 원본이 전혀 영향 X.
+        //객체타입 --> 객체끼리 할당(대입)하면 --> 같은 객체를 가리키기 때문에 --> 원본에 영향 O.
+
+
+        //[2] 원시타입
+        let a = 100;
+        let b = a;
+        b=200;
+
+        console.log(`a의 값은 ${a}`)  //100
+        console.log(`b의 값은 ${b}`)  //200
+
+        //[3] 객체타입
+        let person = {
+            name:'홍길동',
+            age:20,
+        }
+        let person2 = person;
+        console.log(person.age) //20
+        console.log(person2.age) //20
+
+        person2.age = 50;
+        console.log(person.age) //50
+        console.log(person2.age) //50
+
+
+        //💜정리
+        //원시타입과는 다르게 객체타입은 객체끼리의 대입(할당)시 사본을 만드는것이 아니라,
+        //같은 객체를 가리키는 것이다.
+        //즉 같은 객체를 가리키는 또 다른 변수가 하나 더 만들어진것 뿐이다.
+        //무거운 객체를 직접 전달하는것이 아닌 객체에 참조로 전달한다.
+
+
+        //질문
+        let green = 10;
+        green = 20;
+
+
+        const blue = 20;
+        // blue = 40;  //에러  const로 변수를 만들때는 재할당이 안된다.
+
+        const 배열 = [1,2,3,4];  //let은 가능
+        배열[2] = 300;
+        console.log(배열)   //[1,2,300,4]
+    
+
+    </script>
+</body>
+</html>

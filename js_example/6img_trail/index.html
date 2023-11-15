@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top" style="height: 100vh; background-color: #ccc;"></div>
+
+    <div class="main">
+        <h2>Image-Trail</h2>
+        <div class="img img_1"></div>
+        <div class="img img_2"></div>
+        <div class="img img_3"></div>
+        <div class="img img_4"></div>
+        <div class="img img_5"></div>
+    </div>
+
+
+
+    <div class="bottom" style="height: 100vh; background-color: #ccc;"></div>
+
+
+
+
+
+    <script>
+        let img1 = document.querySelector('.img_1'),  //요소자체
+            img2 = document.querySelector('.img_2'),
+            img3 = document.querySelector('.img_3'),
+            img4 = document.querySelector('.img_4'),
+            img5 = document.querySelector('.img_5');
+            
+            // let img = document.getElementsByClassName('img_1');  //배열
+            // let picture = document.querySelectorAll('.img') //배열
+            // console.log(picture)
+
+            document.addEventListener('mousemove',function(e){
+                // console.log(e.clientX) //화면을 기준으로 화면 좌~우측까지 0~
+                // console.log(e.clientY) //화면을 기준으로 화면 상단~하단까지 0~
+                img1.setAttribute('style','top:' + (e.clientY - 220) + 'px;left:' + (e.clientX - 200) + 'px;')
+                img2.setAttribute('style','top:' + (e.clientY - 220) + 'px;left:' + (e.clientX - 200) + 'px;')
+                img3.setAttribute('style','top:' + (e.clientY - 220) + 'px;left:' + (e.clientX - 200) + 'px;')
+                img4.setAttribute('style','top:' + (e.clientY - 220) + 'px;left:' + (e.clientX - 200) + 'px;')
+                img5.setAttribute('style','top:' + (e.clientY - 220) + 'px;left:' + (e.clientX - 200) + 'px;')
+            })
+    </script>
+</body>
+</html>

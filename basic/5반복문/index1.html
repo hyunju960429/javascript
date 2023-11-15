@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //반복문 - for, while, do..while, break, continue
+
+        //👻for문 -- 가장 대표적인 (많이 사용하는) 반복문 --> 연속된 동일한 반복작업을 처리.
+        //보통 명확하게 반복횟수가 지정되어 있으면 for 반복문을 사용, 아니면 while, do..while반복을 사용.
+
+        //1~10까지 출력하시오
+        // document.write(1);
+        // document.write(2);
+        // document.write(3);
+        // document.write(4);
+        // document.write(5);
+        // document.write(6);
+        // document.write(7);
+        // document.write(8);
+        // document.write(9);
+        // document.write(10);
+
+
+        // for(⑴; ⑵;⑷){
+        //     ⑶
+        // }
+
+
+        //1~10
+        // for(let i=1; i<=10;i++){
+        //     document.write(i)
+        //     document.write("<br/>")
+        // }
+
+        // //3~9
+        // for(let i=3; i<=9;i++){
+        //     document.write(i)
+        //     document.write("<br/>")
+        // }
+
+        //1~20(짝수만)
+        //[1]방법
+        // for(let i=1; i<=10;i++){
+        //     document.write(i * 2)
+        //     document.write("<br/>")
+        // }
+        //[2]방법
+        // for(let i=0; i<=20;i+2){
+        //     document.write(i)
+        //     document.write("<br/>")
+        // }
+
+        //[3]방법
+        // for(let i=1; i<=20;i++){
+        //     if(i%2 == 0){
+        //     document.write(i)
+        //     document.write("<br/>")
+        //     }
+        // }
+
+        
+        // document.write("------------<br/>")
+        // for(let i=1; i<=4;i++){             //내부에있는 for먼저 반복 적용 후 외부 for가 돌아간다 //ex) i(1)*j(1) 이후--> i(1)*j(2)
+        //     for(let j=1;j<=4;j++){
+        //         document.write(i + "x" + j + "=" + i * j+",");
+        //     }
+        //     document.write("<br/>")
+        // }
+
+        // document.write("------------<br/>")
+        // for(let i=2; i<=9;i++){
+        //     for(let j=1;j<=9;j++){
+        //         document.write(i + "x" + j + "=" + i * j+",");
+        //     }
+        //     document.write("<br/>")
+        // }
+
+        // document.write("------------<br/>")
+        // for(let i=9; i>=2;i--){
+        //     for(let j=9;j>=1;j--){
+        //         document.write(i + "x" + j + "=" + i * j+",");
+        //     }
+        //     document.write("<br/>")
+        // }
+
+
+        //별찍기
+        
+        let output = "";
+
+        for(let i = 0; i<=5; i++){
+            for(let j=5; j>i; j--){
+                output+="*"; // output = output + *;
+            }
+            document.write(output);
+            document.write("<br/>");
+            output="";
+        }
+
+        
+       
+       
+
+    </script>
+</body>
+</html>

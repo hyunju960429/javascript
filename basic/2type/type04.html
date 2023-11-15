@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //[🟡]: 동적 타입 언어
+
+        //[1]: 정적 타입 언어
+        //보통 타입(type)이라고 하면 '자료형'이고,
+        //일반적으로 int, double, string, char 등의 타입이 있고, 변수앞에 자료형을 선언하고 사용한다.
+
+        //컴파일 과정에서 자료형이 값하고 틀리면 에러가 발생한다.
+
+        //int num = 10;
+        //int num = 3.14; //Error
+
+        //이런 언어들을 "정적 타입 언어"(타입을 미리 지정해 놓아야 한다.)
+        //장점 --> 컴파일에 타입이 미리 정해져있으면 --> 속도가 빠르고, 타입 에러가 사전에 발견되므로 에러날 확률이 적어진다.
+        
+
+        //[2]: 동적 타입 언어
+        //javascript,Python과 같은 언어
+        //이러한 언어들은 변수를 만들 때 변수앞에 자료형을 선언하지 않고,
+        //자료형과 관계없이 변수를 만들 수 있다.
+
+        //Js 같은 경우는 var, let, const 키워드를 변수명 앞에 쓰고 어떤 데이터든 할당 가능하다.
+        let name = '이순신';
+        name = 20;    //number
+        
+        //데이터의 타입을 자유롭게 바꿀 수 있는 언어들을 "동적 타입 언어"라고 한다.
+        //장점 --> 유연하고 편리하다, 배우기 쉽다.
+        //단점 --> 에러 발생률이 높다.
+    </script>
+</body>
+</html>

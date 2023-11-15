@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //연산자
+        //[1] 기본연산자
+        //자바스크립트에서 기본적으로 제공하는 수학 관련 연산자들-->+, -, *, /, %, **
+
+        //[2] : % --> 나누기(나머지를 구하는 나누기)
+        //console.log(`17 % 3 = ${17 % 3}`); //17 % 3 = 2
+        //console.log(`35 % 4 = ${35 % 4}`); //35 % 4 = 3
+
+        //[3] : / --> 몫(나누기에서 몫을 구함)
+        //console.log(`7 / 2 = ${7 / 2}`); //7 / 2 = 3.5
+
+        //[4] : ** --> 거듭제곱 연산자 --> a**b --> a를 b번 곱하기한 값
+        //console.log(2 ** 2); //4
+        //console.log(2 ** 3); //8
+        //console.log(2 ** 4); //16
+        //console.log(`3 ** 3 = ${3 ** 3}`); //3 ** 3 = 27
+
+        //[5] : 더하기 연산자 --> +
+
+        //문자열끼리 더하면
+        //console.log('안녕' + '하세요'); //안녕하세요
+        //console.log(`문자와 숫자 더하기 --> "100" + 100 = ${"100" + 100}`); //문자와 숫자 더하기 --> "100" + 100 = 100100
+
+        //숫자 + 숫자 + 문자
+        //피연산자 중에서 하나가 문자열이면 나머지도 문자열로 바뀐다.
+        //console.log(100 + 200 + '300'); //300300 --> 숫자끼리는 덧셈 + 문자
+        
+        //[6] : 더하기 이외의 연산자들은? --> -, *, /
+        //console.log(100 - '90'); //10 --> 빼기 연산자는 피연산자 중 하나가 문자열이면 계산을 하기 위해서 숫자형으로 바꿔서 수행시킴
+        //console.log('100' - 80); //20
+        //console.log(100 * '2'); //200
+        //console.log(300 / '3'); //100
+
+        //[7] : 피연산자가 모두 문자열이면?
+        //console.log('100' + '100'); //100100
+        //console.log('100' - '100'); //0
+        //console.log('100' * '100'); //10000
+        //console.log('100' / '100'); //1
+
+        //[8] : 
+        let data = '100';
+        console.log(typeof data);  //string
+        
+        data = +data;
+        console.log(typeof data); //number
+
+        let num = 100;
+        num = +num;
+        console.log(typeof num); //number --> 이미 숫자이므로 +를 앞에 붙여도 변화가 없다
+
+        //FORM태그 안에 input을 사용해서 사용자로부터 입력받은 값은 보통 문자열이다
+        let score = "90";
+        console.log(`회원님의 점수는 : ${score + 5}입니다`);  //회원님의 점수는 : 905입니다
+        console.log(`회원님의 점수는 : ${+score + 5}입니다`); //회원님의 점수는 : 95입니다
+        console.log(`회원님의 점수는 : ${Number(score) + 5}입니다`); //회원님의 점수는 : 95입니다
+        
+    </script>
+</body>
+</html>

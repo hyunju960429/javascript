@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //제어문 종류
+        //조건문 --> if, switch
+        //반목문 --> for, while
+        //중지, 건너뛰기 --> break, continue
+
+        //switch 조건문
+        //[특징]
+        //if .. else --> 조건문이 불리언값으로 평가 --> true, false
+        //switch 조건문 --> 평가 --> 숫자값 또는 문자(열)의 값,(분기처리할때 사용)
+
+        // switch(값){
+        //     case 값1:
+        //         실행문(값이 값1일떄의 실행문);
+        //         break;//switch문 종료
+        //     case 값2:
+        //         실행문(값이 값2일떄의 실행문);
+        //         break;//switch문 종료
+        //     case 값3:
+        //         실행문(값이 값3일떄의 실행문);
+        //         break;//switch문 종료
+        //     default:
+        //         실행문(값이 값1,2,3이 모두 아닐때의 실행문);
+        // }
+
+
+        // let number = 4;  //1,2,3 중 하나를 선택해야 하는 상황이 조건
+
+        // switch(number){
+        //     case 1:
+        //         console.log("1번 입니다");
+        //         break;//switch문 종료
+        //     case 2:
+        //         console.log("2번 입니다");
+        //         break;//switch문 종료
+        //     case 3:
+        //         console.log("3번 입니다");
+        //         break;//switch문 종료
+        //     default:
+        //         console.log("모두 아닙니다");
+        // }
+
+
+
+
+        // let A; //A에 100을 더하라 결과값이 다시 A에 입력
+        // A = A + 100; //먼저 계산해야 하는것은 우항이고, 우항의 결과값을 좌항인 A에 입력한다.
+        // // ⑵ = ⑴ --> ⑴의 결과값을 계산 후 ⑵으로 넘긴다.
+
+
+        //A = A + 100; 줄이기
+        // let A;
+        // A += 100; //A = A+100;
+        // console.log(A)
+
+        // let 입장료 = prompt("아동,청소년,성인 중 선택입력","");
+
+        // switch(입장료){
+        //     case "아동":
+        //         입장료 += ": 입장료 2000원 입니다."
+        //         break;
+        //     case "청소년":
+        //         입장료 += ": 입장료 5000원 입니다."
+        //         break;
+        //     case "성인":
+        //         입장료 += ": 입장료 10000원 입니다."
+        //         break;
+        //     default:
+        //         입장료 = "입력을 다시 확인하세요."
+        // }
+        // console.log(입장료);
+
+
+        let day = new Date().getDay();
+        // 0 -> 일요일  1(월), 2(화), 3(수), 4(목), 5(금), 6(토)
+        console.log(day);
+
+        switch (day) {
+            case 0:
+                document.write("일요일 입니다.")
+                break;
+            case 1:
+                document.write("월요일 입니다.")
+                break;
+            case 2:
+                document.write("화요일 입니다.")
+                break;
+            case 3:
+                document.write("수요일 입니다.")
+                break;
+            case 4:
+                document.write("목요일 입니다.")
+                break;
+            case 5:
+                document.write("금요일 입니다.")
+                break;
+            case 6:
+                document.write("토요일 입니다.")
+                break;
+            default:
+                break;
+        }
+    </script>
+</body>
+
+</html>

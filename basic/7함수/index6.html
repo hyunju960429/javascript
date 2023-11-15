@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //화살표함수(Arrow Function)
+
+        //[1] 함수 표현식에서 사용하는 함수는 이름이 없는 함수(익명함수)를 사용한다.
+        // let result = function (a,b){
+        //     return a * b;
+        // }
+        // let ptn = result(10,20);
+        // console.log(ptn);
+
+        //[2] 화살표함수로 전환 --> 생략해도 의미를 유추 할 수 있는것들을 뺀다.
+
+        // let result =  (a,b)=>{
+        //     return a * b;
+        // }
+        let result = (a,b) => a * b;
+        let ptn = result(10,20);
+        console.log(ptn);
+
+        //[3] 인자값이 하나일때 --> 괄호가 생략 가능
+        // let 화살표함수 = function(name){return `반갑습니다 ${name} 회원님`}
+
+        // let 화살표함수 = (name) =>{return `반갑습니다 ${name} 회원님`}
+
+        // let 화살표함수 = (name) =>`반갑습니다 ${name} 회원님`
+
+        // let 화살표함수 = name =>`반갑습니다 ${name} 회원님`
+        //💖매개변수가 '하나일때만' 괄호를 생략가능하다.
+        
+        let 화살표함수 = name =>`반갑습니다 ${name} 회원님`
+
+        let result2 = 화살표함수('세종대왕');
+        console.log(result2);
+
+        //[4] 인자값이 없는 경우 --> 괄호를 생략 할 수 없다.
+
+        // let 인자없음 = function(){
+        //     console.log('인자없는함수')
+        // }
+
+        // let 인자없음 = () => {
+        //     console.log('인자없는함수')
+        // }
+        
+        //중괄호 안에 실행문이 한줄일때는 {}가 생략 가능하다.
+        let 인자없음 = () => console.log('인자없는함수')
+
+        인자없음();
+
+
+        //[5] 리턴문이 있는 경우
+        
+        //함수 표현식
+        // let arrowFunc = function(a,b,c){
+        //     let total = a + b + c;
+        //     return total;
+        // }
+        // console.log(arrowFunc(1,2,3))
+
+        //화살표함수1
+        // let arrowFunc = (a,b,c)=>{
+        //     let total = a + b + c;
+        //     return total;
+        // }
+        // console.log(arrowFunc(1,2,3))
+
+        //화살표함수2
+        // let arrowFunc = (a,b,c)=>{
+        //     return a + b + c;
+        // }
+        // console.log(arrowFunc(1,2,3))
+
+        //화살표함수3
+        // let arrowFunc = (a,b,c) => (
+        //     a + b + c
+        //     );
+        // console.log(arrowFunc(1,2,3))
+
+        //화살표함수4
+        // let arrowFunc = (a,b,c) => a + b + c;
+        // console.log(arrowFunc(1,2,3))
+        
+
+        //화살표함수가 가진 문법의 이해
+        // 예를 들어 let arrowFunc = (a,b,c) => a + b + c; 와 같이 중괄호{}를 사용하지 않고 표현식만을 사용하는 경우, 화살표함수에서는 자동으로 반환값(return)이 된다.
+
+        let arrowFunc = (a,b,c) => (
+            a + b + c
+            );
+            // 여기서도 마찬가지로 ()로 싸여있는 경우는 a + b + c 표현식(값)이라는 의미 이므로,
+            // 표현식만을 사용하는 경우, 화살표함수에서는 자동으로 반환값(return)이 된다.
+    </script>
+</body>
+</html>

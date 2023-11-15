@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //[1] typeof 연산자
+        //typeof 값   --> 값은 피연산자이다.
+        //typeof(값)
+        //피연산자가 어떤 자료형(Data Type)
+
+        let name = "내이름";
+        console.log(typeof name);  //string
+        console.log(typeof (name));   //string
+
+        let age=30;
+        console.log(typeof age);  //number
+
+        // let isThisReal=false;
+        let isThisReal=true;
+        console.log(typeof isThisReal); //boolean
+
+        let isNullCheck=null; //의도적으로 값이 비어있음을 명시한다.
+        console.log(typeof isNullCheck); //null --> object(객체)
+
+        let a=undefined; //undefined는 변수를 선언만 해줘도 자동으로 할당되는 값이다. 그리고 동시에 데이터타입이기도 하다.
+        let b; //선언만 하고 할당하지 않음
+        console.log("변수a의 타입은 = "+ typeof a + "/변수b의 타입은 = "+ typeof b); //변수a의 타입은 = undefined/변수b의 타입은 = undefined
+
+        console.log("변수a의 타입은 = "+ a + "/변수b의 타입은 = "+ b);  //변수a의 타입은 = undefined/변수b의 타입은 = undefined
+        console.log(`변수a의 타입은 =  ${a}  /변수b의 타입은 = ${b}`);  //변수a의 타입은 =  undefined  /변수b의 타입은 = undefined
+
+
+
+
+        let first_class_level = "6교시";
+        let level_groub_number=30;
+
+        //출력 >> 지금수업은 6교시가 진행중이고 30분이 지났습니다.
+        console.log("지금수업은" + first_class_level + "가 진행중이고" + level_groub_number + "분이 지났습니다" );
+        console.log(`지금수업은 ${first_class_level}가 진행중이고 ${level_groub_number}분이 지났습니다 `);
+
+
+        
+        
+    </script>
+</body>
+</html>
