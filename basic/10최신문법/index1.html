@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체: 관련된 정보를 묶어서 하나의 데이터로 저장함
+        let patient = {
+            name:'홍길동',
+            age:17,
+            disease:'cold',
+        }
+        console.log(patient)
+        console.log(patient.name)  //홍길동
+        console.log(patient['name'])  //홍길동
+
+        patient.name = '김홍도';
+        console.log(patient)  //{name: '김홍도', age: 17, disease: 'cold'}
+        patient.age = 25;
+        console.log(patient.age) //25
+
+
+        let patientList = [
+            {name:'김놀부', age:15,},
+            {name:'김흥부', age:13,},
+            {name:'박제비', age:30,},
+        ];
+        console.log(patientList[1].name)  //김흥부
+        console.log(patientList[1]['name'])  //김흥부
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+
+
+        let name = '홍길동';
+        let age = 18;
+
+        //let person = {name:name, age:age};  //앞:key 뒤:변수
+        let person = {name, age}; //변수와 키값이 같으면 축약가능. 위와 똑같은 말이다↑
+
+        console.log(person)  //{name: '홍길동', age: 18}
+        
+        //객체를 분해하는 과정 --> 구조분해문법
+        let 우리반여학생 = {
+            name11:'임현주',
+            age11:28,
+        };
+        //객체를 변수로 분리하고자 할때
+        // let name11 = 우리반여학생.name11;
+        // let age11 = 우리반여학생.age11;
+
+        let {name11, age11} = 우리반여학생;  //줄일때 변수이름과 키값이 같아야 줄이기 가능
+
+        console.log(`이름은 ${name11}이고 나이는 ${age11}살 이다.`) //이름은 임현주이고 나이는 28살 이다.
+        
+
+        //배열을 변수에 담기  --> 구조분해문법
+        let array = [1,2,3];
+        // let one = array[0];
+        // let two = array[1];
+        // let three = array[2];
+
+        let [one,two,three] = array;  //위의 세줄을 이와 같이 축약가능
+        console.log(one,two,three)    //1 2 3
+
+        
+        //--------------------------------------------------------------------------------------------
+        // let [...rest] = array;
+        // console.log(a, rest)
+
+        let [a,...rest] = array;
+        console.log(a,rest) //1 [2, 3] //1은 그냥 출력 2,3은 배열로 출력된다.
+
+
+        let 사람 = {
+            name22:'박지은',
+            age22:18,
+            run:true,
+        };
+        // let {name22,age22,run} = 사람;
+        let {name22,...rest22} = 사람;
+        console.log(name22,rest22) //이름 변수 name22로 받고, 나머지는 객체
+
+        let aa = [1,2];
+        let bb = [3,4];
+        let cc = [5,6];
+
+        let result = aa.concat(bb,cc);
+        console.log(result) //[1, 2, 3, 4, 5, 6]
+
+        let result1 = [...aa,...bb,...cc];
+        console.log(result1)  //[1, 2, 3, 4, 5, 6]
+
+        //
+        let 사람들 = [
+            '김일동',
+            '김이동',
+            '김삼동',
+            '김사동',
+            '김오동',
+            '김육동',
+            '김칠동',
+            '김팔동',
+        ];
+        
+        // for(let i=0;i<사람들.length;i++){
+        //     console.log(사람들[i])
+        // }
+        
+        // 사람들.forEach(function(item){
+        //     console.log(item)
+        // })
+
+        // let 함수 = item=>console.log(item);
+        // 사람들.forEach(함수)
+
+
+        // 사람들.forEach(function(item,index){
+        //     console.log(item, index)
+        // })
+        사람들.forEach((item,index)=>console.log(item, index))
+        
+        let 시민들 = [
+            {name:'박일동',age:16,gender:"남"},
+            {name:'박이동',age:17,gender:"여"},
+            {name:'박삼동',age:18,gender:"남"},
+            {name:'박사동',age:19,gender:"여"},
+            {name:'박이동',age:20,gender:"남"},
+        ];
+
+        //name만 배열로 출력하고 싶다면
+        // let namePrint = 시민들.map(function(ele){
+        //     return ele.name
+        // });
+        let namePrint = 시민들.map(ele=>ele.name);
+        console.log(namePrint)  //['박일동', '박이동', '박삼동', '박사동', '박이동'] //결과물을 배열로 출력해준다.
+        
+        // let filt = 시민들.filter(function(item){    //filter함수 --> 모든 박삼동을 다 찾는다.
+        //     return item.name == '박삼동'
+        // })
+        let filt = 시민들.filter(item=>item.name == '박삼동')
+        console.log(filt)  //[{name:'박삼동',age:18,gender:"남"}]  //배열 안에 객체를 넣은 상태로 출력해준다.
+
+        console.log(시민들) //map(), filter()를 사용해도 원본은 변하지 않는다.
+
+        //find함수 --> 첫번째로 찾은 값만 출력한다.
+        // let fin = 시민들.find(function(item){
+        //     return item.name == '박이동'
+        // });
+        let fin = 시민들.find(item=>item.name == '박이동');
+        console.log(fin) //{name: '박이동', age: 17, gender: '여'}
+
+        
+        //fill --> fill(1) 함수의 아이템들을 모두 1로 바꾼다
+        let arr = [1,2,3,4,5];
+
+        // let result2 = arr.fill(1).map(function(item){
+        //     return item +3;
+        // });
+        let result2 = arr.fill(1).map(item=>item + 3);
+        console.log(result2)  //[4, 4, 4, 4, 4]
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image {}
+        .image img {width: 200px;}
+    </style>
+</head>
+<body>
+    <div class="image"></div>
+
+    <script>
+        //이미지노드 만들기
+
+        //[1]🧡
+        //1. element 생성 (태그생성)
+        //2. 생성한 이미지 요소에 속성을 추가 --> 2가지 방식 --> . vs setAttribute()
+        //3. 객체 붙이기 --> appendChild()
+
+        // let imgNode = document.createElement('img');
+
+        // //<img src="" alt="">
+        // imgNode.src="https://i.namu.wiki/i/1XBBXzpL-mblpXe_Q32qZ4lL0vmFbyuC6pvaPdOX0N6BrXnwMNMFAzVeuYkA1lF0l7Ebs9h6127I3MplDZ4DdA.webp";
+
+        // imgNode.alt="이미지";
+        // imgNode.width=400;
+        // imgNode.height=500;
+        // console.log(imgNode)
+
+        // let image = document.querySelector('.image');
+
+        // image.appendChild(imgNode);
+
+        
+
+
+
+
+        //[2]💛 메서드를 이용하여 속성을 추가 --> setAttribute()
+        //setAttribute() 메서드를 이용하여 속성을 추가할 시 장점 ==> 사용자정의 속성을 직접 만들어서 추가하는 것이 가능
+        let imgNode = document.createElement('img');
+
+
+        let image = document.querySelector('.image');
+        // imgNode.setAttribute(속성,속성값);
+        imgNode.setAttribute('src','https://i.namu.wiki/i/1XBBXzpL-mblpXe_Q32qZ4lL0vmFbyuC6pvaPdOX0N6BrXnwMNMFAzVeuYkA1lF0l7Ebs9h6127I3MplDZ4DdA.webp');
+        imgNode.setAttribute('alt','이미지');
+        imgNode.setAttribute('width',400);
+        imgNode.setAttribute('height',500);
+        imgNode.setAttribute('addProperty','obj1');
+        
+        image.appendChild(imgNode);
+        
+        
+
+    </script>
+</body>
+</html>
