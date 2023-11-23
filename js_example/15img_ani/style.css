@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#slidePhoto {
+    position: absolute;
+    width: 25vw;
+    height: 30vw;
+    background-color: skyblue;
+    z-index: 100;
+    overflow: hidden;
+    pointer-events: none;
+}
+#slidePhotos {
+    width: 100%;
+    height: 400%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+#slidePhotos .photo {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+#slidePhotos .photo:nth-child(1) {background-image: url(https://images.unsplash.com/photo-1656231944351-1bdcbef1bc21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1524&q=80);}
+#slidePhotos .photo:nth-child(2) {background-image: url(https://images.unsplash.com/photo-1656153816323-f3a8186cb239?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);}
+#slidePhotos .photo:nth-child(3) {background-image: url(https://images.unsplash.com/photo-1654859869130-fd0a2aa5539b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80);}
+#slidePhotos .photo:nth-child(4) {background-image: url(https://images.unsplash.com/photo-1653426375933-d2bbd510ae3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1498&q=80);}
+
+
+
+/* view */
+#view {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#view h2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: blue;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    letter-spacing: 0.2vw;
+    font-weight: 300;
+}
+
+/* #one */
+#one {
+    width: 100%;
+    height: 100vh;
+    color: #080808;
+    padding-top: 5vw;
+}
+#eff {}
+#eff .stext {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10vw;
+}
+#eff .stext h3 {
+    font-size: 5vw;
+    transition: 0.3s;
+}
+#eff .line {
+    display: flex;
+    justify-content: center;
+}
+#eff .line .hrline {
+    width: 80%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
