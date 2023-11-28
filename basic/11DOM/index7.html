@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn2" style="border: 3px solid red;">
+    <p id="btn" style="border: 3px solid blue;">!!클릭!!</p></div>
+
+    
+    <script>
+        //onclick vs addEventListener 두 메서드의 차이점
+        //onclick --> 하나의 함수(콜백함수)만 지정해서 등록 --> DOM 초기부터의 메서드 --> 호환성이 좋다
+        //addEventListener --> 다수의 이벤트리스너를 등록하여 처리 가능하다. --> 거의 대부분의 모든 브라우저가 지원
+
+
+        //[1]:onclick 사용시 --> 클릭시 구현될 기능(function)만 충실히 수행
+        //다른 이벤트가 있을시 --> 기존 이벤트를 덮어쓴다(기존 이벤트가 실행되지 않는다)
+        let btn = document.getElementById('btn');
+      
+        // btn.onclick = function(){
+        //     console.log('클릭-1')
+        // }
+
+        // btn.onclick = function(){
+        //     console.log('클릭-2')   //클릭2가 클릭1을 덮어쓰게된다
+        // }
+
+
+        //[2]:addEventListener 사용시 --> 여러 이벤트 등록이 가능 --> 각각의 함수를 수행,덮어쓰지 않음
+
+        btn.addEventListener('click',()=>{
+            console.log('클릭-1')
+        })
+
+        btn.addEventListener('click',()=>{
+            console.log('클릭-2')
+        })
+        
+    </script>
+</body>
+</html>

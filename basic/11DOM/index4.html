@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="user_name">수강생 이름</label>:
+        <input type="text" size="50" id="user_name"><br/>
+        <label for="user_home">수강생 홈페이지</label>:
+        <input type="text" size="50" id="user_home"><br/><br/>
+        <input type="button" id="btn" value="사용자 추가하기">
+    </form>
+    <br/>
+    <div id="memberList"></div>
+
+
+    <script>
+        // document.querySelector('#btn').addEventListener('click',function(){})
+        document.querySelector('#btn').addEventListener('click',()=>{
+            //사용자 입력값
+            let user_name = document.querySelector('#user_name');
+            let user_home = document.querySelector('#user_home');
+            // console.log(user_name.value + ',' + user_home.value)
+
+            //a 태그(노드) 생성
+            let aTagNode = document.createElement('a');
+            aTagNode.href=user_home.value;
+            aTagNode.target="_blank";
+            console.log(aTagNode)
+
+            //텍스트 노드 생성
+            let txtNode = document.createTextNode(user_name.value)
+            aTagNode.appendChild(txtNode);
+            
+            let memberList = document.querySelector('#memberList');
+            let br = document.createElement('br'); //<br>
+            memberList.appendChild(aTagNode);
+            memberList.appendChild(br);
+
+            // 리셋
+            user_name.value = "";
+            user_home.value = "";
+        })
+    </script>
+</body>
+</html>

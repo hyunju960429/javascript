@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click</button>
+    <ul id="memberList">
+        <li id="p1">홍길동</li>
+        <li id="p2">이순신</li>
+        <li id="p3">강감찬</li>
+    </ul>
+
+    <script>
+        //DOM - li 엘리먼트의 특정 문자열로 li요소 삭제하기
+        //[1] li의 문자열로 해당 요소 삭제
+        let li;
+        let li2;
+
+        function removeEleByText(text){
+            //console.log(text)
+            li = document.querySelectorAll('li');
+            console.log(li) //Nodelist --> 유사배열
+            //Nodelist객체를 반환
+            //javascript에서 Element 배열을 다룰시 --> querySelectorAll를 사용하면 Nodelist객체를 반환(이것은 배열과는 차이점이 있다.)  //배열처럼 보이나 엄밀히는 배열이 아님
+            //배열에서 순회하는 메서드를 사용할 수 있음. --> for, forEach..사용가능
+            //구브라우저(IE)는 지원하지 않음
+            //Nodelist객체는 브라우저의 API이다. --> 그런데 javascript에서도 호출하여 사용이 가능하다.
+            li2 = [...document.querySelectorAll('li')];
+            console.log(li2)   //Array 객체로 반환
+
+            // li.forEach(함수)
+            li.forEach((elem)=>{
+                //조건처리
+                // elem.innerText -->text를 추출함
+                if(elem.innerText == text){
+                    elem.parentNode.removeChild(elem)
+                }
+            })
+        }
+        document.getElementById('btn').addEventListener('click',()=>{
+            removeEleByText('이순신')
+        })
+
+        //💛NodeList va Array
+        li = document.querySelectorAll('li'); //유사배열 //NodeList
+        li2 = [...document.querySelectorAll('li')];  //배열 //Array
+        //유사점
+        //1. 배열의 길이에 대한 정보를 가진다. --> length속성.
+        console.clear();
+        console.log(li.length); //3
+        console.log(li2.length); //3
+
+        //2. item의 메서드
+        console.clear();
+
+        console.log(li[0])
+        console.log(li[0].innerText)
+        console.log(li.item(0))  //item() 메서드 --> 사용가능
+        console.log(li.item(0).innerText)
+
+        console.log(li2[0])
+        console.log(li2[0].innerText)
+        //console.log(li2.item(0))    //Error  //자바스크립트 문법이 아님
+
+        //3. 참조를 벗어났을때
+        console.clear();
+        console.log(li.item(5)) //null
+        console.log(li[5]) //undefined
+        console.log(li2[5])  //undefined
+
+
+    </script>
+</body>
+</html>
