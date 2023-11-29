@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic_box1 {
+            border: 1px solid #000;
+        }
+
+        .pic_box1 .big>img {
+            border: 1px solid #3a816f;
+            width: 100%;
+        }
+
+        .pic_box1 img {
+            max-width: 100%;
+        }
+
+        .pic_box2 {
+            width: 50%;
+            margin: 0 auto;
+            border: 1px solid #394b18;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            width: 24%;
+            margin: 1%;
+            cursor: pointer;
+            overflow: hidden;
+            height: 6vw;
+        }
+
+        ul {}
+
+        /* 브라우저 제조사별 접두어 --> Vendor Prefix 또는 Browser prefix(브라우저의 종류에 따라 조금씩 지원 다름) 
+        과도기적 단계에서 사용 --> 브라우저 제조사마다 다른 접두어를 사용
+
+        -webkit-    : Safari, chrome, Android, iOS --> Webkit엔진을 이용하는 브라우저
+        -moz-       : Firefox, 모질라 브라우저 엔진을 사용하는 브라우저
+        -ms-        : IE
+        -o-         : Opera
+
+            -webkit-transform: rotate();
+            -moz-transform: rotate();
+            -ms-transform: rotate();
+            -o-transform: rotate();
+            transform: rotate();
+        */
+    </style>
+</head>
+
+<body>
+    <div class="pic_box1">
+        <div class="pic_box2">
+            <ul>
+                <li>
+                    <img src="https://img.freepik.com/free-photo/adorable-cat-relaxing-indoors_23-2150692838.jpg?w=1380&t=st=1701235403~exp=1701236003~hmac=dcc88a4351af32f26d0d31e377f4931066d4bd92f149eb597c6f88fc17a02cc4"
+                        class="small_img"
+                        data-image="https://img.freepik.com/free-photo/adorable-cat-relaxing-indoors_23-2150692838.jpg?w=1380&t=st=1701235403~exp=1701236003~hmac=dcc88a4351af32f26d0d31e377f4931066d4bd92f149eb597c6f88fc17a02cc4"
+                        alt="">
+                </li>
+                <li>
+                    <img src="https://img.freepik.com/free-photo/shallow-focus-shot-of-a-cat-stretching-outside-during-daytime-with-a-blurred-background_181624-34450.jpg?w=1380&t=st=1701235441~exp=1701236041~hmac=052b2e3513bc0620b2b8a6fb0a6b1b14c5799e3733a27a865e5320edd424599a"
+                        class="small_img"
+                        data-image="https://img.freepik.com/free-photo/shallow-focus-shot-of-a-cat-stretching-outside-during-daytime-with-a-blurred-background_181624-34450.jpg?w=1380&t=st=1701235441~exp=1701236041~hmac=052b2e3513bc0620b2b8a6fb0a6b1b14c5799e3733a27a865e5320edd424599a"
+                        alt="">
+                </li>
+                <li>
+                    <img src="https://img.freepik.com/free-photo/wild-black-cat-with-green-eyes_181624-20030.jpg?w=1380&t=st=1701235508~exp=1701236108~hmac=85d93629bcf885eae682b379c5385de9851c753d3ed8986a827ad27ebb4b402d"
+                        class="small_img"
+                        data-image="https://img.freepik.com/free-photo/wild-black-cat-with-green-eyes_181624-20030.jpg?w=1380&t=st=1701235508~exp=1701236108~hmac=85d93629bcf885eae682b379c5385de9851c753d3ed8986a827ad27ebb4b402d""
+                    alt="">
+                </li>
+                <li>
+                    <img src="
+                        https://img.freepik.com/free-photo/cat-with-a-light-brown-striped-fur-in-front-of-a-white-wall_181624-26534.jpg?w=1380&t=st=1701235529~exp=1701236129~hmac=c4734cd92e403520b891a9734887e98b1b43768ed998285fdb93af9a369c34c4"
+                        class="small_img"
+                        data-image="https://img.freepik.com/free-photo/cat-with-a-light-brown-striped-fur-in-front-of-a-white-wall_181624-26534.jpg?w=1380&t=st=1701235529~exp=1701236129~hmac=c4734cd92e403520b891a9734887e98b1b43768ed998285fdb93af9a369c34c4"
+                        alt="">
+                </li>
+            </ul>
+            <div class="big">
+                <img src="https://img.freepik.com/free-photo/beautiful-domestic-cat-laying-on-a-fence_181624-43207.jpg?w=1380&t=st=1701235554~exp=1701236154~hmac=c7d1e3f0f63d5b40e202c55b1fcad6186c4f1b666c367c99527deae5f373a76a"
+                    id="big_img"
+                    data-image="https://img.freepik.com/free-photo/beautiful-domestic-cat-laying-on-a-fence_181624-43207.jpg?w=1380&t=st=1701235554~exp=1701236154~hmac=c7d1e3f0f63d5b40e202c55b1fcad6186c4f1b666c367c99527deae5f373a76a"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //작은이미지들 가져오기
+        let images = document.querySelectorAll('.small_img'); //유사배열
+
+        for (let i = 0; i < images.length; i++) {
+            images[i].onclick = function () {
+                console.log(this.getAttribute("data-image"))
+                console.log(this.dataset.image)
+                //사용자 속성을 만들때 data-로 시작하고(data-임의의변수),
+                //이것을 추출하는 방법은 (요소.dataset.임의의변수)를 사용 할 수 있다.
+                //data- 로 시작하지 않는 사용자 속성은 요소.getAttribute("사용자속성이름")으로 사용 할 수 있으며
+                //data- 를 사용했더라도 getAttribute방식으로도 사용 할 수 있다.
+
+                document.getElementById('big_img').src = this.dataset.image;
+            }
+            images[i].addEventListener("mouseenter",
+                function () {
+                    for (let i = 0; i < images.length; i++) {
+                        document.getElementById('big_img').src = this.dataset.image;
+                    }
+                }
+            )
+        }
+    </script>
+</body>
+
+</html>
