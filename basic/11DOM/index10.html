@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {list-style: none; cursor: pointer;}
+        img {width: 200px;}
+    </style>
+</head>
+<body>
+    <h1>동물원 현황 리스트</h1>
+    <ul class="memberList">
+        <li><img src="https://cdn.gijn.kr/news/photo/202112/410675_314715_3144.jpg" alt="호랑이" id="호랑이"></li>
+        <li><img src="https://img.seoul.co.kr/img/upload/2023/05/13/SSC_20230513105130_O2.jpg" alt="치타" id="치타"></li>
+        <li><img src="https://i.namu.wiki/i/gUzc0o2AqX5MazeU4bwtYIjkI9JOpcBok6wwOHWfeB0ZoZvGhLX1jkgFc9ODI05TMkA1wIugx8Taw76GrSkYpA.webp" alt="코끼리" id="코끼리"></li>
+    </ul>
+
+    <script>
+        //이벤트 위임
+        //[1]
+        let lis = document.querySelectorAll('li');
+        // lis.forEach(function(ele){})
+        lis.forEach(ele=>{
+            ele.addEventListener('click',function(event){ //e, ev, event 모두 사용가능
+                // console.log(event.target) //img
+                //event.target
+                //이벤트가 일어날 자식(객체)를 의미
+                // 즉, 이벤트 버블링의 가장 끝단에 위치한 마지막요소를 반환 --> 클릭한요소
+
+                //console.log(event.currentTarget) //li
+                console.log(this)
+
+            })
+        })
+
+
+
+        //[2] 💚이벤트 위임을 사용하는 이유
+        //새로운 동물 추가
+        let memberList = document.querySelector('.memberList');  //이벤트를 li의 부모에게 적용했으므로 memberList에 새로운 li가 추가됐어도 이벤트가 적용된다.
+        // memberList.addEventListener('click',event=>{
+        //     console.log(event.target.src)
+        //     console.log(event.target.id)
+        // })
+
+        //동물태그추가
+        let li = document.createElement('li');
+        memberList.appendChild(li);
+
+        let img = document.createElement('img');
+        li.appendChild(img);
+
+        img.src = "https://www.fitpetmall.com/wp-content/uploads/2022/12/shutterstock_2142847507-1024x683.jpg";
+        img.alt = "고양이";
+        img.id = "고양이";
+
+
+
+
+    </script>
+</body>
+</html>

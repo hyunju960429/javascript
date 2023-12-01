@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {list-style: none; cursor: pointer;}
+        img {width: 200px;}
+    </style>
+</head>
+<body>
+    <h1>동물원 현황 리스트</h1>
+    <ul class="memberList">
+        <li><img src="https://cdn.gijn.kr/news/photo/202112/410675_314715_3144.jpg" alt="호랑이" id="호랑이"></li>
+        <li><img src="https://img.seoul.co.kr/img/upload/2023/05/13/SSC_20230513105130_O2.jpg" alt="치타" id="치타"></li>
+        <li><img src="https://i.namu.wiki/i/gUzc0o2AqX5MazeU4bwtYIjkI9JOpcBok6wwOHWfeB0ZoZvGhLX1jkgFc9ODI05TMkA1wIugx8Taw76GrSkYpA.webp" alt="코끼리" id="코끼리"></li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $('.memberList').append('<li><img src="https://www.fitpetmall.com/wp-content/uploads/2022/12/shutterstock_2142847507-1024x683.jpg" alt="고양이" id="고양이"></li>');
+
+        $('.memberList').on("click","li",function(){
+            console.log($(this).find('img').attr('src'))
+        });
+
+        // $('li').click(function(){
+        //     console.log($(this))
+        // });
+        
+        
+        
+        
+       
+
+    </script>
+</body>
+</html>
