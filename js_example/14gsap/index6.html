@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {background-color: #000;}
+        .stage {
+            background-color: gray;
+            width: 500px; height: 500px;
+            position: absolute;
+            left: 50%; top: 50%; transform: translate(-50%,-50%);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .stage .item {
+            width: 80px; height: 90px;
+            background: url(https://item.kakaocdn.net/do/0c2c793a43a9a1d58756353e8b82f0ad617ea012db208c18f6e83b1a90a7baa7); background-size: cover;
+            position: absolute; top: 50%;
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        let tl = gsap.timeline();
+        // autoAlpha => opacity, visivility
+        tl
+        .to('.stage',{autoAlpha:1,duration:1,})
+        .to('.item',{
+            // keyframes:{
+            //     "0%": {},
+            //     "25%": {y:0,ease: "sine.out",},
+            //     "50%": {y:-100,ease: "sine.in",},
+            //     "75%": {y:0},
+            //     "100%": {x:500},
+            // },
+
+            keyframes: {
+                x:[0,20,250,400,500],
+                y:[0,-20,-100,-50,0],
+                ease:'power4.out'
+            },
+            duration:2, //지속시간
+            stagger:0.2, //개별로 딜레이 0.2s씩 준다
+        })
+    </script>
+</body>
+</html>

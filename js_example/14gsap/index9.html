@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {color: #fff; text-decoration: none;}
+        body {display: flex; justify-content: center; align-items: center;}
+        .btn_wrap {position: absolute; left: 5vw; top: 5vh;
+        display: flex; z-index: 20;}
+        .btn_wrap>a {padding: 5px 10px; background-color: #222; border-radius: 10px; margin-right: 10px;}
+        .imgs { position: relative; width:800px;}
+        .imgs>img {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="btn_wrap">
+        <a href="#" class="play">Play</a>
+        <a href="#" class="pause">Pause</a>
+        <a href="#" class="reverse">Reverse</a>
+        <a href="#" class="restart">Restart</a>
+        <a href="#" class="test">Test</a>
+    </div>
+    <div class="imgs">
+        <img class="원" src="img/Shape-05.png" alt="img1">
+        <img class="손" src="img/Shape-04.png" alt="img1">
+        <img class="작은원들 장식" src="img/Shape-03.png" alt="img1">
+        <img class="반짝이 장식" src="img/Shape-02.png" alt="img1">
+        <img class="손배" src="img/Shape-01.png" alt="img1">
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // let tl = gsap.timeline({timeline에 관련된 모든 트윈에 설정값을 적어둘 수 있다.});
+        let tl = gsap.timeline({paused:true});
+        
+        tl.from('.원',{dulation:3, opacity:0, x:100, y:100})
+        tl.from('.손',{dulation:2, opacity:0, x:50, y:100,},'-=0.7')  //?????????
+        tl.add('test')
+        tl.from('.장식',{dulation:1, opacity:0, x:50, y:50,
+            // stagger:{each:0.2}
+            stagger:0.2
+        })
+        tl.from('.손배',{dulation:1, opacity:0, x:50, y:50},'<')
+
+
+        document.addEventListener('click',event=>{
+            let check = event.target.classList;
+            // console.log(check)
+
+            //hasClass(클래스명) ==? 클래스명의 클래스를 가지고 있는가 //true or false
+            if(check.contains('play')){tl.play()} //애니메이션을 재생
+            if(check.contains('pause')){tl.pause()} //애니메이션을 멈춤
+            if(check.contains('reverse')){tl.reverse()} //애니메이션을 거꾸로 재생
+            if(check.contains('restart')){tl.restart()} //애니메이션을 다시 실행
+            //if(check.contains('test')){tl.kill()} //다시 실행 안된다.
+            if(check.contains('test')){tl.play('test')} //추가된 add('test')이후부터 실행이 된다.
+        })
+        
+    </script>
+</body>
+</html>

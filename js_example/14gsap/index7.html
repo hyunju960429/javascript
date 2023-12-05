@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        body>div {height: 100vh;}
+        .div1 {background-color: rgb(107, 179, 107);}
+        .div2 {background-color: rgb(56, 99, 56); padding-top: 200px;}
+        .div2>div {width: 150px; height: 150px; margin-bottom: 100px;}
+        .div2 .square1 {background-color: #fff;}
+        .div2 .square2 {background-color: rgb(43, 56, 43);}
+    </style>
+</head>
+<body>
+    
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="square1"></div>
+        <div class="square2"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".square1",{
+            x:700,
+            duration:3,
+            scrollTrigger:{
+                trigger:".square1",
+                start:"top 30%",        //trigger의 주체의 top지점이 viewport의 top에서 30%지점에서 시작
+                end:"center 10%",       //trigger의 주체의 center지점이 viewport의 top에서 10%지점에서 종료
+                markers:true,           //start,end등 애니메이션의 위치를 화면에 표시
+                scrub:true,             //start에서 end까지 애니메이션이 scroll에 반응하여 애니메이션이 실행됨 //true 대신 숫자 입력할 수 있다 (ex:false=0 그외=true)
+                toggleClass:"action",   //start에서 end사이 일때는 [action클래스]가 .square에 추가되고 그외 영역에서는 [action클래스]가 삭제
+                
+            }
+        })
+    </script>
+</body>
+</html>

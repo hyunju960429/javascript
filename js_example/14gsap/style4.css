@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ebe2ff;
+}
+
+.svg_wrap {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#controller{
+    display:flex;
+    margin: 50px;
+    position: absolute;
+    left: 0;
+    top:2vh;
+   
+  }
+  #controller > button{
+    background: black;
+    padding: 5px 10px;
+     color: #fff;
+    font-size: 30px;
+    border-radius: 10px;
+    cursor:pointer;
+  }
+  
+  #controller button:focus {
+    outline:none;
+    background: white;
+    color: black;
+  }

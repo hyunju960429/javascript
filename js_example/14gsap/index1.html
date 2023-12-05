@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {padding: 50px;}
+        .wrap img {width: 100px;}
+        .wrap>div {width: 100px;height: 100px; margin-bottom: 50px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="하나"><img src="https://i.namu.wiki/i/Cc3aQXqE8rc2nIRt70WPVeaezoBc-MDexWhGkBRVvY7IjyKyNntBgyP11sMgbI4BFxOzoUmUOpihnofQBWJwsw.webp" alt=""></div>
+        <div class="둘"><img src="https://i.namu.wiki/i/yzxvPP2u3vcW4IpzOPGLEDn24IA_1V4nUGUy6hOaFGDQ5JH3mqVQyCnk4bZU4MZVzovE3AuHGeToAZIM7zCb_A.webp" alt=""></div>
+        <div class="셋"><img src="https://i.namu.wiki/i/JNKvslt1j4AioYDmWSiZdcJBzwWD2-XibS8JYqMiQcSpF5GSUzYHVdVBsSOPElngPI5CfiAUf0oM3bXXzFr30w.webp" alt=""></div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // gsap.to(누가,{실행})
+        gsap.to('.하나',{x:700,scale:3,duration:3})  //to : 실행문대로 된다.
+        gsap.from('.둘',{x:700,scale:3,duration:3}) //from : 시작이 실행문 도착은 원래 위치
+        // gsap.fromTo('.셋',{from상태},{to상태})
+        gsap.fromTo('.셋',{x:800,y:400,opacity:0,scale:1,duration:1},{x:400,y:0,opacity:1,scale:3,duration:3})
+    </script>
+</body>
+</html>
