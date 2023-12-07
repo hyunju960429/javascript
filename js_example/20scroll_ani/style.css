@@ -48,21 +48,21 @@ body {
 }
 
 .world .stage .house .wall-left {
-    width: 1500vw;
+    width: 2000vw;
     background: url(img/wallBG최종.png);
     background-size: contain;
-    transform: rotateY(90deg) translateZ(-750vw);
+    transform: rotateY(90deg) translateZ(-1000vw);
 }
 .world .stage .house .wall-right {
-    width: 1500vw;
+    width: 2000vw;
     background: url(img/wallBG최종.png);
     background-size: contain;
-    transform: rotateY(90deg) translateZ(-651vw);
+    transform: rotateY(90deg) translateZ(-900vw);
 }
 
 .world .stage .house img {
     position: absolute;
-    width: 20vw;
+    width: 15vw;
 }
 .world .stage .house .ladyBug {
     bottom: 0;
@@ -90,20 +90,30 @@ body {
 
 .world .stage .house .wall-front-a {
     transform: translateZ(300vw);
+    background: url(https://img.freepik.com/free-vector/hand-drawn-spring-landscape_23-2148447507.jpg?w=1380&t=st=1701907990~exp=1701908590~hmac=fd96199b39967d1a32896c8de5f2fce8eefb1e3f2f2d67fac8d925c32b9d871b) no-repeat;
+    background-size: cover;
 }
 .world .stage .house .wall-front-b {
     transform: translateZ(50vw);
+    background: url(https://img.freepik.com/free-vector/blooming-daisy-field-background-with-mountain-banner_53876-114678.jpg?w=1380&t=st=1701908146~exp=1701908746~hmac=b3f6ed8116161d9bb84a20cafab4bf03e6153227168965c1169bc51257755875) no-repeat;
+    background-size: cover;
 }
 .world .stage .house .wall-front-c {
     transform: translateZ(-200vw);
+    background: url(https://img.freepik.com/free-vector/natural-landscape-background-for-video-conferencing_52683-45368.jpg?w=1380&t=st=1701908117~exp=1701908717~hmac=875257477599a151514f121a461b93ab210ffd65e6e53bc7d9da15deb3c3a575) no-repeat;
+    background-size: cover;
 }
 .world .stage .house .wall-front-d {
     transform: translateZ(-500vw);
+    background: url(https://img.freepik.com/free-vector/gradient-flower-field-background_52683-121834.jpg?w=1380&t=st=1701908019~exp=1701908619~hmac=f41b2c718527cb760234f0f6e26295b476cb6986459cf18d26963adb665c8c56) no-repeat;
+    background-size: cover;
 }
 .world .stage .house .wall-front-e {
-    transform: translateZ(-650vw);
+    transform: translateZ(-750vw);
+    background: url(https://img.freepik.com/free-vector/hand-drawn-spring-landscape_23-2148822586.jpg?w=1380&t=st=1701908169~exp=1701908769~hmac=ddc1506454e937c34e08ff65820ba46cd3bdd1dc879d3a8c89cc0a65fe49ecea) no-repeat;
+    background-size: cover;
 }
 .world .stage .house .wall-front-f {
-    transform: translateZ(-750vw);
+    transform: translateZ(-1000vw);
 }
 

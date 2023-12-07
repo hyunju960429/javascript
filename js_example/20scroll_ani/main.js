@@ -10,7 +10,7 @@ let stageEle = document.querySelector('.stage'),
         let scrollPer = pageYOffset / maxScrollValue;
         //console.log(scrollPer)
 
-        let zMove = scrollPer * 1200 - 490;
+        let zMove = scrollPer * 1450 - 490;
         houseEle.style.transform = `translateZ(${zMove}vw)`;
     })
 
