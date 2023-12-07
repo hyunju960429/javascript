@@ -34,16 +34,10 @@
             scrollTrigger:{
                 trigger:".square1",
                 start:"top 60%",
-                end:"end 30%",
+                end:()=>`+=${document.querySelector('.square1').offsetHeight}`,
+                //.square1의 높이가 100px이라면
+                //애니메이션의 현재위치(start)에서 100px을 더한다.
                 markers:true,
-                // scrub:true,
-                //toggleActions:"진입시 떠났을때 떠난후재진입 떠난후재진입후떠났을때",
-                //toggleActions:"onEnter onLeave onEnterBack onLeaveBack",
-                //toggleActions에 사용할수 있는 동작 : play, pause, resume(정지지점부터 재실행), reverse, restart, reset, complete, none
-                //complete(완료지점)
-                //toggleActions:"play reverse restart reset",
-                //toggleActions의 초기값:"play none none none",
-                toggleActions:"play pause resume restart",
                 
             }
             

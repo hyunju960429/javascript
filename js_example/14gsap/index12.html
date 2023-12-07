@@ -32,19 +32,16 @@
             x:700,
             duration:3,
             scrollTrigger:{
-                trigger:".square1",
-                start:"top 60%",
-                end:"end 30%",
-                markers:true,
-                // scrub:true,
-                //toggleActions:"진입시 떠났을때 떠난후재진입 떠난후재진입후떠났을때",
-                //toggleActions:"onEnter onLeave onEnterBack onLeaveBack",
-                //toggleActions에 사용할수 있는 동작 : play, pause, resume(정지지점부터 재실행), reverse, restart, reset, complete, none
-                //complete(완료지점)
-                //toggleActions:"play reverse restart reset",
-                //toggleActions의 초기값:"play none none none",
-                toggleActions:"play pause resume restart",
-                
+                trigger:".div2",
+                start:"top 0%",
+                end:"+=200vh",
+                scrub:3, //0제외 숫자 = true
+                pin:'.div2',
+                markers:{
+                    startColor:"yellow",
+                    endColor:"white",
+                    fontSize:'20px',
+                },
             }
             
         })
