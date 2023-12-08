@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            transition: 0.6s;
+            background-color: tan;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            padding: 40px;
+        }
+
+        li {
+            margin-right: 60px;
+        }
+
+        .pannel {
+            height: 100vh;
+            padding-bottom: 100vh;
+        }
+
+        .pannel p {
+            padding-top: 50px;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        nav.nav-active {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="pannel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nemo inventore, illum optio quis ratione
+            nesciunt repudiandae qui illo at porro minima laboriosam quisquam tenetur dolor iusto molestias fugiat
+            suscipit ea quasi eos quo alias perferendis non? Error laudantium excepturi possimus perspiciatis labore
+            quae, adipisci laborum mollitia, ullam veritatis quaerat magni aliquid accusamus fugiat repellat cum non
+            tempore earum fuga natus corporis distinctio facilis voluptatum? Quas modi, in, ad voluptas, minus assumenda
+            numquam dolore voluptatem voluptates hic rerum nostrum consequatur fugiat voluptatibus corporis. Quidem
+            laudantium minus omnis aliquid voluptates sunt, ratione sit debitis nostrum tenetur, voluptate aut
+            architecto illo repudiandae assumenda saepe inventore sequi, unde deleniti temporibus rerum. Voluptatum modi
+            nesciunt fuga velit pariatur vitae sapiente alias aliquid excepturi ea consectetur nostrum, reprehenderit
+            veniam maxime ab similique voluptates iusto, adipisci ullam molestias optio delectus architecto blanditiis.
+            In quasi nemo atque esse, eveniet obcaecati officia ea consectetur repellendus laboriosam voluptate
+            explicabo suscipit odio ad, consequuntur at enim blanditiis. Assumenda voluptatem cum quibusdam fugit porro
+            blanditiis! Libero vitae inventore veniam deleniti, ipsum natus? Sapiente sunt blanditiis porro consequatur.
+            Commodi, maxime, temporibus ipsa quibusdam repellat placeat vitae, dicta molestias corporis officia est sit
+            deserunt vel at? Odit delectus culpa facere hic omnis vitae.</p>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // gsap.to("nav",{
+        //     scrollTrigger:{
+        //         trigger:".pannel",
+        //         start:"top 6%",
+        //         markers:true,
+        //         toggleClass: "nav-active" //🧡pannel에 클래스명 추가하는 방법
+        //         toggleClass:{targets:"nav",className:"nav-active"} //💛nav에 클래스명 추가하는 방법
+        //     }
+        // })
+
+        ScrollTrigger.create({
+            trigger: ".pannel",
+            start: "top 6%",
+            markers: true,
+            toggleClass: {targets: "nav",className: "nav-active"}
+        })
+    </script>
+</body>
+
+</html>
