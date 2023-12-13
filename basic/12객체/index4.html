@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 이름의 첫글자를 대문자로 시작한다
+        //'new'연산자와 생성자함수를 사용하여 객체를 여러가지 만들 수 있다.
+        function Add(a,b){ //생성자함수
+            //this는 자기자신의 객체를 의미
+            //this = {}; //빈 객체가 암시적으로 만들어짐
+            this.a = a;
+            this.b = b;
+            this.plus = function(){
+                return this.a + this.b
+            }
+            //return this; //this가 암시적으로 반환된다.
+        }
+        //console.log(add1(10,20)) //error //new없이 호출 안됨
+        let add1 = new Add(100,200);
+        console.log(add1.plus()) //300
+
+        let add2 = new Add(1000,50);
+        console.log(add2.plus()) //1050
+
+
+
+        //프로토타입에 함수만들기
+        function Add2(a,b){
+            this.a = a;
+            this.b = b;
+        }
+
+        Add2.prototype.plus = function(){
+            return this.a + this.b
+        }
+        Add2.prototype.name = "대한민국";
+
+        let add2_1 = new Add2(10,20);
+        console.log(add2_1) //Add2 {a: 10, b: 20}
+        console.log(add2_1.name) //대한민국
+        console.log(add2_1.plus()) //30
+
+        let add2_2 = new Add2(30,40);
+        console.log(add2_2) //Add2 {a: 30, b: 40}
+        console.log(add2_2.name) //대한민국
+        console.log(add2_2.plus()) //70
+
+
+
+        class Add3{
+            constructor(a,b){
+                this.a = a;
+                this.b = b;
+            }
+            plus(){
+                return this.a + this.b
+            } //class에서 만들었으므로 위치는 class안이지만 plus함수가 프로토타입에 만들어진다.
+        }
+        let c1 = new Add3(20,30);
+        console.log(c1)
+        console.log(c1.plus()) //50
+        
+
+        //자바스크립트의 프로토타입 상속(프로토타입 체이닝)
+
+        //상속의 필요성
+        //가장 큰 목적 --> 재사용
+        //이미 부모쪽에서 정의된 속성과 메서드를 그대로 물려받아 재사용 할 수 있다(큰장점)
+        //뿐만 아니라, 새로운 기능을 추가해서 기존 기능에서 더 확장시킬 수 있다.
+        //--> 중복해서 또 작성하지 않아도 되고, 필요에 따라서 더 확장도 가능
+
+
+
+        let obj1 = {
+            name:"홍길동",
+            age:28,
+        };
+        console.log(obj1) //이때의 prototype은 최상위 프로토타입객체를 의미한다.
+
+        let obj2 = {
+            name:"이순신"
+        };
+
+        //console.log(obj2.__proto__) //프로토타입을 부르는 방법
+
+        obj2.__proto__ = obj1;
+        //prototype 속성을 다른 객체의 속성으로 바꿀수 있다.
+        console.log(obj2.age) //28
+        console.log(obj2.name) //이순신 //먼저 나의 name:이순신을 참조했으르로 obj1까지 찾아가서 name을 참조하지 않았다.
+
+        
+        
+
+    </script>
+</body>
+</html>
