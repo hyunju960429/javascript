@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Person{
+            constructor(name,age){
+               this.name=name;
+               this.age=age;
+            }
+
+             testHello(){
+                console.log(`안녕 나는 ${this.name}이라고 해~ 나이는 ${this.age}살이야~`)
+             }
+        }
+
+        console.log(typeof Person)//function 함수는 객체이다.
+
+      
+        const po = new Person("홍길동",15)
+        for(let i in po){
+            console.log("po :" + i)
+        }
+
+        console.log(Object.getPrototypeOf(po))
+
+    //자바스크립트 클래스- 생성자 메서드(constructor())
+    //생성자 메서드는 객체를 생성할때 제일 먼저 실행되는 메서드이다. 
+    //주로 생성되는 객체의 초기화를 담당한다.
+    //클래스내에 constructor라는 이름을 가진 생성자는 오직 하나여야한다. --> 2개면 err
+
+    //constructor 는 생략이 가능 --> 클래스에 constructor(){}를 작성한것과 동일한다.
+
+    class Animal{
+        constructor(){
+            //this={name:"호랑이",age:15}
+            //return this;
+        }
+    }
+    const ani1=new Animal();
+    ani1.name="호랑이";
+    ani1.age=20;
+
+    console.log(ani1.name)
+    console.log(ani1.age)
+
+    </script>
+</body>
+</html>

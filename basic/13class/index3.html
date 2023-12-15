@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //상속
+        //부모가 가진 자원을 그대로 상속받아 자식 클래스를 생성및 확장해서 만들수 있다
+        //기본의 부모가 가진 자원을 물려받아 자식이 더 크게 확장하여 만들수 있다  --> extends      * 확장하다. 연장하다
+
+        //부모 클래스
+        class Animal{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            eat(){
+                return this.name + "아~ 빨리 먹자~"
+            }
+        }
+
+       //자식 클래스
+       class Tiger extends Animal{
+        //자식클래스는 this라는 객체를 가지지 못해서
+        constructor(name, age, eye){
+            super();//부모의 생성자를 호출 super를 가장 먼저 실행해야한다.
+            this.eye = eye;
+        }
+        eat(){
+                return this.name + "아~ 다 먹었지~"
+            }
+
+       }
+       const t1=new Tiger("호랑이",20,2);
+       console.log(t1.name)//호랑이
+       console.log(t1.eat())//호랑이아~ 다 먹었지~
+
+       console.log(t1.eye)
+    </script>
+</body>
+</html>
