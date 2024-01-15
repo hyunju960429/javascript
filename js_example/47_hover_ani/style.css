@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Metal&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#elem-div {
+    height: 100vh;
+    width: 100vw;
+    /* overflow-x: auto; */
+    position: relative;
+    /* overflow-y: hidden; */
+    white-space: nowrap;
+    z-index: 999;
+    scroll-behavior: smooth;
+}
+
+#elem-div::-webkit-scrollbar {
+    display: none;
+}
+
+.elems {
+    height: 100%;
+    width: 15vw;
+    display: inline-block;
+    border-right: 1px solid#a4a4a4;
+    margin-left: -5px;
+    text-decoration: none;
+    position: relative;
+}
+
+.elems h2 {
+    transform: rotate(-90deg);
+    position: absolute;
+    color: rgb(221, 221, 221);
+    font-family: voyage;
+    /* background-color: red; */
+    width: 600px;
+    height: 190px;
+    z-index: 9999;
+    font-weight: 300;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    bottom: -21%;
+    left: 0px;
+    transform-origin: left top;
+    font-family: "Metal", serif;
+}
+
+#image {
+    position: absolute;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    /* background-color: red; */
+    background-position: center;
+    transform: rotate(2deg);
+    background-size: cover;
+    transition: height 0.5s, width 0.5s, background-image 0.5s,
+        transform cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+    pointer-events: none;
+}
