@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.easypiechart {
+    background-color: #19182d;
+    height: 100vh;
+    position: relative;
+}
+
+.easypiechart .container {
+    width: 100vw;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.easypiechart .container .box {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.easypiechart .container .box .chart {
+    text-align: center;
+}
+
+.easypiechart .container .box h2 {
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.easypiechart .container .box h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+}
