@@ -28,6 +28,16 @@ function initHeaders(){
     let cloneSplit = document.querySelectorAll('h1:last-child .char');
 
 
+    gsap.set(cloneSplit, {rotationX:-90, opacity:0, transformOrigin:"50% 50% -50"});
+
+    tl.to(originalSplit,{duration:0.4, rotationX:90, stagger:0.05, transformOrigin:"50% 50% -50"});
+    tl.to(originalSplit,{duration:0.4, opacity:0, stagger:0.05},0);
+
+
+    tl.to(cloneSplit,{duration:0.05, stagger:0.05, opacity:1},0.001);
+    tl.to(cloneSplit,{duration:0.4, rotationX:0, stagger:0.05},0);
+
+
 }
 
 
